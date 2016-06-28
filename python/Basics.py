@@ -103,3 +103,46 @@ print mySet1 & mySet2;
 #	set([1, 2, 3])
 print mySet1 | mySet2;
 #	set([1, 2, 3, 4])
+
+# def function
+import math
+
+def move(x, y, step, angle=0):
+    nx = x + step * math.cos(angle);
+    ny = y - step * math.sin(angle);
+    return nx, ny;
+
+r = move(100, 100, 60, math.pi / 6);
+print r;
+#	(151.96152422706632, 70.0)
+
+def calc(*numbers):
+    sum = 0;
+    for n in numbers:
+        sum = sum + n * n;
+    return sum;
+
+print calc(1, 2);
+#	5
+print calc();
+#	0
+nums = [1, 2, 100];
+print calc(*nums);
+#	10005
+
+def func(a, b, c=0, *args, **kw):
+    print 'a =', a, 'b =', b, 'c =', c, 'args =', args, 'kw =', kw;
+
+
+print func(1, 2);
+#	a = 1 b = 2 c = 0 args = () kw = {}
+print func(1, 2, c=3);
+#	a = 1 b = 2 c = 3 args = () kw = {}
+print func(1, 2, 3, 'a', 'b');
+#	a = 1 b = 2 c = 3 args = ('a', 'b') kw = {}
+print func(1, 2, 3, 'a', 'b', x=99);
+#	a = 1 b = 2 c = 3 args = ('a', 'b') kw = {'x': 99}
+args = (1, 2, 3, 4);
+kw = {'x': 99};
+print func(*args, **kw);
+#	a = 1 b = 2 c = 3 args = (4,) kw = {'x': 99}
