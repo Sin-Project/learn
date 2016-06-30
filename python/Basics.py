@@ -6,7 +6,6 @@
 __author__ = 'magce';
 __source__ = 'Michael Liao';
 
-import customized.fn as fn;
 
 # int 
 integer = 1546685;
@@ -40,6 +39,7 @@ print dir(string);
 
 
 # list
+import customized.fn as fn;
 classmates = ['Mechael', 'Bob', 'Tracy'];
 classmates.sort();
 
