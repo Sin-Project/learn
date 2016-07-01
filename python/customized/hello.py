@@ -25,4 +25,4 @@ def test():
         print 'Too many arguments!';
 
 if __name__ == '__main__':
-    test();
+    test(); 
