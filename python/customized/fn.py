@@ -14,3 +14,9 @@ def fullToStr(params):
 		else:
 			includes += str(value) + ', ';
 	return includes;
+
+def readObjectAttr(obj, attr):
+    if hasattr(obj, attr):
+        return obj.attr;
+    return None
+
