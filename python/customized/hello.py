@@ -5,6 +5,16 @@
 
 import sys;
 
+try:
+    import cStringIO as StringIO;
+except ImportError: # get ImportError
+    import StringIO;
+
+try:
+    import json; # python >= 2.6
+except ImportError:
+    import simplejson as json; # python <= 2.5
+
 def test():
     args = sys.argv
     if len(args) == 1:
