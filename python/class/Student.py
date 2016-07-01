@@ -89,4 +89,4 @@ else:
 #	add attr sex : female
 
 print getattr(bart, 'teacher', 404);
-
+#	404
