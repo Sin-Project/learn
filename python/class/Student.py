@@ -37,6 +37,10 @@ class Person(object):
 	def run(self):
 		print '%s is running...' % self.__class__.__name__;
 
+class Adult(object):
+    def work(self):
+        print '%s is working...' % self.__class__.__name__;
+
 class Student(Person):
 
     def __init__(self, name, score):
@@ -54,7 +58,7 @@ class Student(Person):
 
     def set_name(self, name):
         if not isinstance(name, str):
-            raise ValueError('score must be an string!')
+            raise ValueError('score must be an string!');
     	if name != None and len(name) > 2:
     		self.__name = name;
     	else:
@@ -68,11 +72,21 @@ class Student(Person):
         else:
             raise ValueError('bad score');
 
+    def __str__(self):
+        return 'Student object (name: %s)' % self.__name;
+
+    __repr__ = __str__;
+
 bart = Student('Bart Simpson', 99);
 bart.print_score();
 #	Bart Simpson : 99
 
 bart.run();
+#   Student is running...
+
+print bart;
+#   Student object (name: Bart Simpson)
+
 
 print isinstance(bart, Student);
 print isinstance(bart, Person);
@@ -124,5 +138,51 @@ class GraduateStudent(object):
 
 mike = GraduateStudent();
 mike.name = 'little mike';
-# mike.brith = '1983-10-30';
-#   AttributeError: 'GraduateStudent' object has no attribute 'brith'
+# mike.birth = '1983-10-30';
+#   AttributeError: 'GraduateStudent' object has no attribute 'birth'
+
+class Teacher(Person, Adult):
+    """docstring for Teacher Class"""
+
+    def __init__(self, birth):
+        super(Teacher, self).__init__();
+        self._birth = birth;
+
+    @property
+    def birth(self):
+        return self._birth;
+
+    @property
+    def name(self):
+        return self._name;
+
+    @name.setter
+    def name(self, name):
+        if not isinstance(name, str):
+            raise ValueError('name must be an string!');
+        if name != None and len(name) > 2:
+            self._name = name;
+        else:
+            raise ValueError('bad name');
+    @property
+    def age(self):
+        return self._age;
+
+    @age.setter
+    def age(self, age):
+        if not isinstance(age, int):
+            raise ValueError('age must be an integer!')
+        if 0 <= age <= 100:
+            self._age = age;
+        else:
+            raise ValueError('wrong');
+
+morel = Teacher('2016-4-6');
+morel.name = 'morel skel'; #    bind property name call function name.setter
+print morel.name; #     call function name  
+#   morel.birth = 'ssss';
+#   AttributeError: can't set attribute
+print morel.birth;
+#   2016-4-6
+morel.run();
+morel.work();
