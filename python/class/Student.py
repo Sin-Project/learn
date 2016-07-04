@@ -82,7 +82,7 @@ print type('abc')==types.StringType # types.UnicodeType types.ListType types.Typ
 # True
 
 if hasattr(bart, 'sex'):
-	getattr(bart, 'sex');
+	print getattr(bart, 'sex');
 else:
 	setattr(bart, 'sex', 'female');
 	print 'add attr sex : %s' % bart.sex;
