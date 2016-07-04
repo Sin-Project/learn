@@ -90,3 +90,27 @@ else:
 
 print getattr(bart, 'teacher', 404);
 #	404
+
+#   function bind
+def set_age(self, age):
+    self.__age = age;
+def get_age(self):
+    return self.__age;
+
+from types import MethodType;
+bart.set_age = MethodType(set_age, bart, Student);
+bart.get_age = MethodType(get_age, bart, Student);
+#   bind function in instance
+bart.set_age(55);
+print bart.get_age;
+#   <bound method Student.get_age of <__main__.Student object at 0x1019f1b10>>
+print bart.get_age();
+#   55
+
+sam = Student('Sam Tomas', 60);
+#   sam.set_age(52);
+#   AttributeError: 'Student' object has no attribute 'set_age'
+
+Student.set_age = MethodType(set_age, None, Student);
+#   bind function in class
+
