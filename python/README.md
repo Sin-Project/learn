@@ -1,5 +1,5 @@
 # python 2.7
-	Basic and class learning
+	Basic and class
 		./basics.py
 		./class/Student.py
 		./customized/fn.py
