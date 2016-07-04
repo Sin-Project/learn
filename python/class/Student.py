@@ -109,7 +109,7 @@ else:
 print getattr(bart, 'teacher', 404);
 #	404
 
-#   function bind
+# function bind
 def set_age(self, age):
     self.__age = age;
 def get_age(self):
@@ -118,7 +118,7 @@ def get_age(self):
 from types import MethodType;
 bart.set_age = MethodType(set_age, bart, Student);
 bart.get_age = MethodType(get_age, bart, Student);
-#   bind function in instance
+# bind function in instance
 bart.set_age(55);
 print bart.get_age;
 #   <bound method Student.get_age of <__main__.Student object at 0x1019f1b10>>
@@ -130,9 +130,9 @@ sam = Student('Sam Tomas', 60);
 #   AttributeError: 'Student' object has no attribute 'set_age'
 
 Student.set_age = MethodType(set_age, None, Student);
-#   bind function in class
+# bind function in class
 
-#   limit class attr : __slots__
+# limit class attr : __slots__
 class GraduateStudent(object):
     __slots__ = ('name', 'age');
 
@@ -177,6 +177,10 @@ class Teacher(Person, Adult):
         else:
             raise ValueError('wrong');
 
+    def __getattr__(self, attr):
+        print 'This class has no attribute %s , if you want to use it, Please set it' % attr;
+        # raise AttributeError('the object has no attribute \'%s\'' % attr);
+
 morel = Teacher('2016-4-6');
 morel.name = 'morel skel'; #    bind property name call function name.setter
 print morel.name; #     call function name  
@@ -184,5 +188,134 @@ print morel.name; #     call function name
 #   AttributeError: can't set attribute
 print morel.birth;
 #   2016-4-6
+print morel.model;
+#   This class has no attribute model , if you want to use it, Please set it
 morel.run();
+#   Teacher is running...
 morel.work();
+#   Teacher is working...
+
+# class iterable
+class Fib(object):
+    def __init__(self):
+        self.a, self.b = 0, 1; # init a, b
+
+    def __iter__(self):
+        return self;
+
+    def next(self):
+        self.a, self.b = self.b, self.a + self.b; # count next
+        if self.a > 10: # condition
+            raise StopIteration();
+        return self.a # return next a
+
+for n in Fib():
+    print n;
+#   1 1 2 3 5 8
+
+# getitem
+class Fib(object):
+    def __getitem__(self, n):
+        a, b = 1, 1;
+        for x in range(n):
+            a, b = b, a + b;
+        return a;
+
+fib = Fib();
+print fib[10];
+#   89
+
+# class slice
+class Fib(object):
+    def __getitem__(self, n):
+        if isinstance(n, int):
+            a, b = 1, 1;
+            for x in range(n):
+                a, b = b, a + b;
+            return a;
+        if isinstance(n, slice):
+            start = n.start;
+            stop = n.stop;
+            a, b = 1, 1;
+            L = [];
+            for x in range(stop):
+                if x >= start:
+                    L.append(a);
+                a, b = b, a + b;
+            return L;
+
+fib = Fib();
+print fib[0:5];
+#   [1, 1, 2, 3, 5];
+
+# chain
+class Chain(object):
+
+    def __init__(self, path = ''):
+        self._path = path;
+
+    def __getattr__(self, path):
+      return Chain("%s/%s" % (self._path, path));
+        
+
+    def __str__(self):
+        return self._path;
+
+    __repr__ = __str__;
+
+    def __call__(self,name):
+        return Chain('GET %s/:%s' % (self._path,name))
+
+url = Chain('host');
+print url.status.user.timeline.list;
+#   host/status/user/timeline/list
+
+print url.users('mike').etc.list;
+#   GET host/users/:mike/etc/list
+
+class Chain2(object):
+
+    def __init__(self, path = ''):
+        self._path = path
+
+    def getpath(self):
+        return self._path
+
+    def _setpath(self,path,params = 0):
+        isget = self._path.find('GET');
+        if(not params):
+            if(isget == 0):
+                self._path = ('%s/%s' % (self._path, path))
+            else:
+                self._path = ('GET %s/%s' % (self._path, path))
+        else:
+            self._path = ('%s/:%s' % (self._path, path))
+
+    def __getattr__(self, path):
+        self._setpath(path);
+        return self;
+
+    def __str__(self):
+        return self._path;
+
+    def __call__(self,path=''):
+        self._setpath(path,1);
+        return self;
+
+    __repr__=__str__
+
+print Chain2().users('mike').etc.list;
+#   GET /users/:mike/etc/list
+
+#  create class
+def fn(self, name = 'world'):
+    print ('hello, %s.' % name);
+
+Hello = type('Hello', (object, ), dict(hello = fn)); # create
+hi = Hello();
+hi.hello('python');
+#   hello, python.
+print type(Hello);
+#   <type 'type'>
+print type(hi);
+#   <class '__main__.Hello'>
