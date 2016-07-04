@@ -319,3 +319,4 @@ print type(Hello);
 #   <type 'type'>
 print type(hi);
 #   <class '__main__.Hello'>
+
