@@ -53,12 +53,16 @@ class Student(Person):
     	return self.__score;
 
     def set_name(self, name):
-    	if name != '' and len(name) > 2:
+        if not isinstance(name, str):
+            raise ValueError('score must be an string!')
+    	if name != None and len(name) > 2:
     		self.__name = name;
     	else:
     		raise ValueError('bad name');
 
     def set_score(self, score):
+        if not isinstance(score, int):
+            raise ValueError('score must be an integer!')
     	if 0 <= score <= 100:
             self.__score = score;
         else:
@@ -114,3 +118,11 @@ sam = Student('Sam Tomas', 60);
 Student.set_age = MethodType(set_age, None, Student);
 #   bind function in class
 
+#   limit class attr : __slots__
+class GraduateStudent(object):
+    __slots__ = ('name', 'age');
+
+mike = GraduateStudent();
+mike.name = 'little mike';
+# mike.brith = '1983-10-30';
+#   AttributeError: 'GraduateStudent' object has no attribute 'brith'
