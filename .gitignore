@@ -1,0 +1,13 @@
+# Mac DS_Store Files
+.DS_Store
+
+#vim
+*.swp
+*.swo
+*.swn
+*.swm
+tags
+
+# py config
+__init__.py
+*.pyc
