@@ -13,3 +13,4 @@
 		./IO/RW.py 					read & write
 		./IO/pickling.py 			serialization
 		./IO/search_file.py 		test script
+		./regular/reg.py 			python regular
