@@ -108,5 +108,5 @@ class User(Model):
     email = StringField('email');
     password = StringField('password');
 
-u = User(uid = 22, age = 32, name = 'sa', email = 'sadd', password = 'sssss');
+u = User(uid = 22, age = 32, name = 'mike', email = 'mike@orm', password = 'password');
 u.save();
