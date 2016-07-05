@@ -75,7 +75,7 @@ def bar(s):
 
 def domain():
     bar(0);
-# raise error     when assert = false active error
+# raise error     when (assert = false) ,active error
 
 
 import logging
@@ -92,8 +92,23 @@ def domain():
     except StandardError, e:
         logging.exception(e)
 
-domain();
-print 'END';
+#   domain();
+#   print 'END';
 # 	...
 # 	ZeroDivisionError: integer division or modulo by zero
 # 	END
+
+
+import logging;
+logging.basicConfig(level=logging.INFO);
+
+#   s = '0';
+#   n = int(s);
+#   logging.info('n = %d' % n);
+#   print 10 / n;
+#   $ python err.py
+#   INFO:root:n = 0
+#   Traceback (most recent call last):
+#     File "err.py", line 8, in <module>
+#      print 10 / n
+#   ZeroDivisionError: integer division or modulo by zero
