@@ -18,8 +18,9 @@ DIRECTORY STRUCTURE
 ```
 		./basics.py 				python's basic
 		./customized/fn.py  		custom function & raise errors
-		./customized/fn.py 			test module
+		./customized/hello.py 		test module
 		./customized/regLog.py 		register & login test
+		./customized/genPic.py 		Generate picture
 		./class/BClass.py 			class basic
 		./class/Metaclass.py 		meta class
 		./IO/OS.py 					os's function & process
@@ -34,4 +35,8 @@ DIRECTORY STRUCTURE
 		./include/iter.py 			itertools module
 		./include/struc.py 			struct module
 		./include/XML.py 			ParserCreate module
+		./include/tkint.py 			Tkinter module
+		./net/sock.py   			socket net connect
+		./thirdParty/PIL.py 		Image module
+		
 ```
