@@ -8,10 +8,10 @@ is friendly & easy to learn;
 is Open.
 
 These are some of the reasons people who use Python would rather not use anything else.
+Source : [Mr.liaoxuefeng](http://www.liaoxuefeng.com/)
 
 [![Python Home Page](https://docs.python.org/2/_static/py.png)](https://www.python.org)
 [![Download Page](https://wiki.python.org/wiki/europython/img/moin-renamed.png)](https://www.python.org/ftp/python/2.7.11/)
-[![Source : liaoxuefeng](http://tva2.sinaimg.cn/crop.0.1.635.635.50/62d8efadgw1ej30downrsj20hs0hq0ws.jpg)](http://www.liaoxuefeng.com/)
 
 DIRECTORY STRUCTURE
 -------------------
