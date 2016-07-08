@@ -9,7 +9,7 @@ is Open.
 
 These are some of the reasons people who use Python would rather not use anything else.
 
-[![Download Page](https://www.python.org/static/img/python-logo.png)](https://www.python.org/ftp/python/2.7.11/)
+[![Download Page](https://poser.pugx.org/yiisoft/yii2-app-advanced/v/stable.png)](https://www.python.org/ftp/python/2.7.11/)
 
 DIRECTORY STRUCTURE
 -------------------
