@@ -16,7 +16,6 @@ DIRECTORY STRUCTURE
 		./IO/pickling.py 			serialization
 		./IO/search_file.py 		test script
 		./regular/reg.py 			python regular
-<<<<<<< HEAD
 		./include/collections.py 	collections module
 		./include/b64.py 			base64 module
 		./include/hash.py 			hashlib module
@@ -25,6 +24,3 @@ DIRECTORY STRUCTURE
 		./include/struc.py 			struct module
 		./include/XML.py 			ParserCreate module
 ```
-=======
-		./include/collections.py 	collections module 
->>>>>>> master
