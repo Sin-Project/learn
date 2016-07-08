@@ -16,18 +16,23 @@ DIRECTORY STRUCTURE
 -------------------
 
 ```
-		./basics.py 				python's basic
+		./basics.py 				python's 
+
 		./customized/fn.py  		custom function & raise errors
 		./customized/hello.py 		test module
 		./customized/regLog.py 		register & login test
 		./customized/genPic.py 		Generate picture
+
 		./class/BClass.py 			class basic
 		./class/Metaclass.py 		meta class
+
 		./IO/OS.py 					os's function & process
 		./IO/RW.py 					read & write
 		./IO/pickling.py 			serialization
 		./IO/search_file.py 		test script
+
 		./regular/reg.py 			python regular
+
 		./include/collections.py 	collections module
 		./include/b64.py 			base64 module
 		./include/hash.py 			hashlib module
@@ -36,7 +41,9 @@ DIRECTORY STRUCTURE
 		./include/struc.py 			struct module
 		./include/XML.py 			ParserCreate module
 		./include/tkint.py 			Tkinter module
+
 		./net/sock.py   			socket net connect
+		
 		./thirdParty/PIL.py 		Image module
 		
 ```
