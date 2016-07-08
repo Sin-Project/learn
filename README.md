@@ -1,7 +1,7 @@
 Python 2.7.11
 ===============================
 
-[![Python Home Page](https://www.python.org/static/img/python-logo.png)](https://www.python.org/ftp/python/2.7.11/)
+[![Python Home Page](https://docs.python.org/2/_static/py.png)](https://www.python.org/ftp/python/2.7.11/)
 [![Download Page](https://wiki.python.org/wiki/europython/img/moin-renamed.png)](https://www.python.org/ftp/python/2.7.11/)
 
 Python is powerful... and fast;
