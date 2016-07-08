@@ -11,6 +11,7 @@ These are some of the reasons people who use Python would rather not use anythin
 
 [![Python Home Page](https://docs.python.org/2/_static/py.png)](https://www.python.org)
 [![Download Page](https://wiki.python.org/wiki/europython/img/moin-renamed.png)](https://www.python.org/ftp/python/2.7.11/)
+[![Source : liaoxuefeng]](http://www.liaoxuefeng.com/)
 
 DIRECTORY STRUCTURE
 -------------------
