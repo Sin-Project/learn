@@ -17,11 +17,11 @@ def _format_addr(s):
         addr.encode('utf-8') if isinstance(addr, unicode) else addr));
 # chinese need Header() to analysis
 
-from_addr = 'magce.qin@gmail.com';#raw_input('From: ');
-password = 'iloveyou5267501';#raw_input('Password: ');
-to_addr = 'magce-lili@qq.com';#raw_input('To: ');
-smtp_server = 'smtp.gmail.com';#raw_input('SMTP server: ');
-port = 587
+from_addr = raw_input('From: ');
+password = raw_input('Password: ');
+to_addr = raw_input('To: ');
+smtp_server = raw_input('SMTP server: ');
+port = int(raw_input('SMTP server port: '));
 
 # msg = textby('hello,man send by Python...', 'plain');     # by text
 
