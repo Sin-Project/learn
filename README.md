@@ -24,6 +24,7 @@ DIRECTORY STRUCTURE
 		./customized/hello.py 		test module
 		./customized/regLog.py 		register & login test
 		./customized/genPic.py 		Generate picture
+		./customized/fetchMail.py 	get mail
 
 		./class/BClass.py 			class basic
 		./class/Metaclass.py 		meta class
@@ -43,9 +44,18 @@ DIRECTORY STRUCTURE
 		./include/struc.py 			struct module
 		./include/XML.py 			ParserCreate module
 		./include/tkint.py 			Tkinter module
+		./include/sql.py 			sql module
 
 		./net/sock.py   			socket net connect
+		./net/client.py 			socket client side
+		./net/service.py 			Server side
 		
+		./email/pop3.py 			pop3 Example
+		./email/smtp.py 			smtp Example
+
+		./web/flask					flask framework
+		./web/WSGI					WSGI module
+
 		./thirdParty/PIL.py 		Image module
 		
 ```
