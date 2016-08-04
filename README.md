@@ -1,4 +1,4 @@
-Python 2.7.11
+Study Python 2.7.11
 ===============================
 
 [Python](https://www.python.org) is powerful... and fast;
